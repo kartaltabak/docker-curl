@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate custom tag
         run: |
-          customTag=$(docker run --rm --entrypoint sh ${TEST_TAG} ktversion)
+          customTag=$(docker run --rm --entrypoint sh ${TEST_TAG} /sbin/ktversion)
           echo "KT_VERSION=${customTag}" >> $GITHUB_ENV
 
       - name: Build and push Docker image with timestamp
